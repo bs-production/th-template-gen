@@ -45,18 +45,24 @@
 
     <v-col class="mb-5 output-box code" cols="12" sm="8" md="12">
 
-     <pre>
-         <code v-highlight="topHTML" class="html"></code>
-         <code v-highlight="bottomHTML" class="html"></code>
-     </pre>
+         <!-- <code v-highlight="topHTML" class="html"></code>
+         <code v-highlight="bottomHTML" class="html"></code> -->
 
+
+      <pre>
+        <code v-highlight class="html">
+          {{topHTML}}
+            [content]
+          {{bottomHTML}}
+         </code>
+      </pre>
         <div v-if="headerSelected == 'A'">
        
             {{headers[3].html}}
         
         </div>
       
-            [content]
+  
        
         <div v-if="footerSelected == 'A'">
         
@@ -121,7 +127,7 @@ export default {
   computed: {
     ...mapState(["footers", "headers", "templatebody"])
   },
-  mounted() {
+  created() {
     this.topHTML = formatter.render(this.templatebody[1].html);
     this.bottomHTML = formatter.render(this.templatebody[2].html);
   }
@@ -160,9 +166,8 @@ export default {
     padding: 0.5em;
     background: #282c34;
     color: #abb2bf;
-    overflow-x: hidden;
 }
 pre {
-  overflow-x:scroll; 
+  /* overflow-x:scroll;  */
 }
 </style>
