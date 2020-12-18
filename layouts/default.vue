@@ -59,14 +59,14 @@ export default {
       fixed: false,
       items: [
         {
-          icon: 'mdi-apps',
+          icon: 'mdi-pine-tree',
           title: 'Sassafras',
           to: '/'
         },
         {
-          icon: 'mdi-chart-bubble',
-          title: 'Big Tree',
-          to: '/inspire'
+          icon: 'mdi-dump-truck',
+          title: 'Junkluggers',
+          to: '/junkluggers'
         }
       ],
       miniVariant: false,

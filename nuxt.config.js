@@ -36,7 +36,8 @@ export default {
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
             '@nuxtjs/apollo',
-           ['nuxt-highlightjs', { style: 'atom-one-dark'}]
+           ['nuxt-highlightjs', { style: 'atom-one-dark'}],
+           "nuxt-clipboard2"
            ],
 
   apollo: {
