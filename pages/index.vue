@@ -40,7 +40,6 @@
   </v-row>
   <div v-if="headerSelected || mainMessageSelected || servicesSelected || footerSelected">
   <v-row justify="center" align="center">
-    <h3>Viewer</h3>
     <v-col class="mb-5 output-box" cols="12" sm="8" md="12">
         <div v-if="headerSelected == 'A'">
           <classic-header/>
@@ -51,7 +50,7 @@
         <div v-if="servicesSelected == 'A'">
           <classic-services/>
         </div>
-        [content]
+        <h2>[content]</h2>
         <div v-if="footerSelected == 'A'">
           <classic-footer/>
         </div>
@@ -106,7 +105,7 @@
                     <div v-if="servicesSelected == 'A'">
                         {{classicServicesHTML}}
                     </div>
-                      [content]
+                     [content]
                     <div v-if="footerSelected == 'A'">
                       {{classicFooterHTML}}
                     </div>
@@ -167,6 +166,7 @@
 
 <script>
 import { mapState } from "vuex";
+import TreehouseLogoWhite from '~/components/logos/TreehouseLogo.vue'
 import ClassicHeader from '~/components/headers/ClassicHeader.vue'
 import ClassicMainMessage from '~/components/main-messages/ClassicMainMessage.vue'
 import ClassicServices from '~/components/services/ClassicServices.vue'
@@ -207,6 +207,7 @@ export default {
       textCSS: 'CSS Copied'
     }),
     components: {
+      TreehouseLogoWhite,
       ClassicHeader,
       ClassicMainMessage,
       ClassicServices,
@@ -283,6 +284,10 @@ export default {
   background: #fff;
   color:#000;
 }
+.output-box h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
 .code {
   border: none;
   padding: 0;
@@ -308,5 +313,10 @@ export default {
 }
 .theme--dark.v-btn:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined) {
     background-color:#73aa4a;
+}
+.v-main__wrap {
+  background-image: url(~assets/img/treehouse-logo-white.svg);
+  background-position: center;
+  background-size: 40%;
 }
 </style>

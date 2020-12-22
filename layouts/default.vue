@@ -51,6 +51,7 @@
   </div>
 </template>
 <script>
+
 export default {
   data () {
     return {
@@ -72,8 +73,16 @@ export default {
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Treehouse Theme Builder'
+      title: 'Template Menu'
     }
+  }, components: {
+   
   }
 }
 </script>
+<style>
+.v-application--is-ltr .v-toolbar__content > .v-btn.v-btn--icon:first-child + .v-toolbar__title, .v-application--is-ltr .v-toolbar__extension > .v-btn.v-btn--icon:first-child + .v-toolbar__title {
+    padding-left: 0;
+}
+
+</style>
