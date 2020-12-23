@@ -86,11 +86,10 @@
                   <v-snackbar
                     v-model="snackbar"
                     :timeout="timeout"
-                    absolute
                     right
                     top
                   >
-                    {{ text }}
+                    <div class="snack-text">{{ text }}</div>
                   </v-snackbar>
                 </div>
                <pre>
@@ -129,11 +128,10 @@
                   <v-snackbar
                     v-model="snackbarCSS"
                     :timeout="timeout"
-                    absolute
                     right
                     top
                   >
-                    {{ textCSS }}
+                    <div class="snack-text">{{ textCSS }}</div>
                   </v-snackbar>
                 </div>
               <pre>
@@ -269,7 +267,7 @@ export default {
     background-color: #73aa4a;
 }
 .theme--dark.v-card {
-    background-color: #282c34;
+    background-color: #1e1e1e;
     color: #FFFFFF;
 }
 .v-application a {
@@ -318,5 +316,33 @@ export default {
   background-image: url(~assets/img/treehouse-logo-white.svg);
   background-position: center;
   background-size: 40%;
+}
+.snack-text {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #73aa4a;
+  text-transform: uppercase;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #919191; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000; 
 }
 </style>

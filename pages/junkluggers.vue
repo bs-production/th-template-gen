@@ -188,8 +188,7 @@ export default {
     background-color: #73aa4a;
 }
 .theme--dark.v-card {
-    background-color: #282c34;
-    color: #FFFFFF;
+
 }
 .v-application a {
     color: inherit;
