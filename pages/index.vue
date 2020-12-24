@@ -276,7 +276,7 @@ export default {
     color: #FFFFFF;
 }
 .v-application a {
-    color: inherit;
+    color: inherit !important;
 }
 .v-card__text {
   padding-top: 40px;
@@ -344,5 +344,11 @@ code::-webkit-scrollbar-track {
 code::-webkit-scrollbar-thumb {
   background: #73aa4a; 
   border-radius: 15px;
+}
+#footer-links #social-footer-icons > a > svg, #social-footer-icons > a > svg {
+    max-height: 22px;
+    max-width: 25px;
+    display: block;
+    margin: auto;
 }
 </style>
