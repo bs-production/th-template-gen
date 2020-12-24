@@ -351,4 +351,7 @@ code::-webkit-scrollbar-thumb {
     display: inline;
     margin: auto;
 }
+#header-btn a {
+    color: #fff !important;
+}
 </style>
