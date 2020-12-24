@@ -348,7 +348,7 @@ code::-webkit-scrollbar-thumb {
 #footer-links #social-footer-icons > a > svg, #social-footer-icons > a > svg {
     max-height: 22px;
     max-width: 25px;
-    display: block;
+    display: inline;
     margin: auto;
 }
 </style>
