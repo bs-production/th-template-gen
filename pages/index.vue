@@ -276,7 +276,7 @@ export default {
     color: #FFFFFF;
 }
 .v-application a {
-    color: initial !important;
+    color: inherit;
 }
 .v-card__text {
   padding-top: 40px;
