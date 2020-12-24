@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/junkluggers", {data:[{}],fetch:[],mutations:[]});

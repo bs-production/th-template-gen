@@ -44,6 +44,9 @@
         <div v-if="headerSelected == 'A'">
           <classic-header/>
         </div>
+        <div v-if="headerSelected == 'B'">
+          <condensed-header/>
+        </div>
         <div v-if="mainMessageSelected == 'A'">
           <classic-main-message/>
         </div>
@@ -166,6 +169,7 @@
 import { mapState } from "vuex";
 import TreehouseLogoWhite from '~/components/logos/TreehouseLogo.vue'
 import ClassicHeader from '~/components/headers/ClassicHeader.vue'
+import CondensedHeader from '~/components/headers/CondensedHeader.vue'
 import ClassicMainMessage from '~/components/main-messages/ClassicMainMessage.vue'
 import ClassicServices from '~/components/services/ClassicServices.vue'
 import ClassicFooter from '~/components/footers/ClassicFooter.vue'
@@ -207,6 +211,7 @@ export default {
     components: {
       TreehouseLogoWhite,
       ClassicHeader,
+      CondensedHeader,
       ClassicMainMessage,
       ClassicServices,
       ClassicFooter
@@ -286,10 +291,7 @@ export default {
   text-align: center;
   margin-bottom: 50px;
 }
-.code {
-  border: none;
-  padding: 0;
-}
+
 [type='text']:focus, [type='password']:focus, [type='date']:focus, [type='datetime']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='week']:focus, [type='email']:focus, [type='number']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='url']:focus, [type='color']:focus, textarea:focus,input:disabled, input[readonly], textarea:disabled, textarea[readonly] {
   border: initial;
   background-color: initial;
@@ -304,6 +306,7 @@ export default {
     background: #282c34;
     color:#98c379;
     max-height: 900px;
+    border: none;
 }
 .v-application .primary--text {
     color: #fff !important;
@@ -324,25 +327,22 @@ export default {
   color: #73aa4a;
   text-transform: uppercase;
 }
+
+/* Scroll bar */
 /* width */
-::-webkit-scrollbar {
-  width: 10px;
+code::-webkit-scrollbar {
+  width: 15px;
+  background: rgb(59, 59, 59);
 }
 
 /* Track */
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey; 
-  border-radius: 10px;
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #919191; 
-  border-radius: 10px;
+code::-webkit-scrollbar-track {
+  background: rgb(59, 59, 59);
 }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #b30000; 
+/* Handle */
+code::-webkit-scrollbar-thumb {
+  background: #73aa4a; 
+  border-radius: 15px;
 }
 </style>
