@@ -264,7 +264,7 @@ export default {
     this.classicServicesHTML = formatter.render(this.services[0].html);
     this.classicFooterHTML = formatter.render(this.footers[0].html);
 
-    this.templateCSS = cssbeautify(this.templatebody[0].css);
+    this.templateCSS = cssbeautify(this.templatebody[2].css);
     this.classicHeaderCSS = cssbeautify(this.headers[0].css);
     this.classicMainMessageCSS = cssbeautify(this.mainmessages[0].css);
     this.classicServicesCSS = cssbeautify(this.services[0].css);
@@ -314,6 +314,10 @@ export default {
 }
 .v-application a {
     color: inherit;
+}
+.v-application .primary--text {
+    color: #fff !important;
+    caret-color: #fff !important;
 }
 .v-card__text {
   padding-top: 40px;

@@ -221,10 +221,7 @@ export default {
     color:#98c379;
     max-height: 900px;
 }
-.v-application .primary--text {
-    color: #fff !important;
-    caret-color: #fff !important;
-}
+
 .theme--dark.v-btn:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined) {
     background-color:#73aa4a;
 }
