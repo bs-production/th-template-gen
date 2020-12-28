@@ -1,8 +1,17 @@
 <template>
   <div>
-  <v-row justify="center" align="center">
+  <v-row justify="center" align="center" class="mt-10">
     <v-col cols="12" sm="8" md="3">
-      <h5>Choose Header</h5>
+
+       <v-row no-gutters>
+          <v-col cols="1">
+              <v-icon>{{ icons.header }}</v-icon>
+          </v-col>
+          <v-col cols="11" class="pl-2">
+              <h5>Header</h5>
+          </v-col>
+        </v-row>
+
         <v-select
           :items="dropDownHeaders"
           v-model="headerSelected"
@@ -11,7 +20,15 @@
         ></v-select>
     </v-col>
     <v-col cols="12" sm="8" md="3">
-      <h5>Choose Main Message</h5>
+       <v-row no-gutters>
+          <v-col cols="1">
+              <v-icon>{{ icons.mm }}</v-icon>
+          </v-col>
+          <v-col cols="11" class="pl-2">
+             <h5>Main Message</h5>
+          </v-col>
+        </v-row>
+      
         <v-select
           :items="dropDownMainMessages"
           v-model="mainMessageSelected"
@@ -20,7 +37,14 @@
         ></v-select>
       </v-col>
           <v-col cols="12" sm="8" md="3">
-      <h5>Choose Services Layout</h5>
+            <v-row no-gutters>
+              <v-col cols="1">
+                   <v-icon>{{ icons.services }}</v-icon>
+              </v-col>
+              <v-col cols="11" class="pl-2">
+                  <h5>Services</h5>
+              </v-col>
+            </v-row>
         <v-select
           :items="dropDownServices"
           v-model="servicesSelected"
@@ -29,7 +53,14 @@
         ></v-select>
       </v-col>
           <v-col cols="12" sm="8" md="3">
-      <h5>Choose Footer</h5>
+            <v-row no-gutters>
+              <v-col cols="1">
+                  <v-icon>{{ icons.footer }}</v-icon>
+              </v-col>
+              <v-col cols="11" class="pl-2">
+                  <h5>Footer</h5>
+              </v-col>
+            </v-row>
         <v-select
           :items="dropDownFooters"
           v-model="footerSelected"
@@ -202,6 +233,12 @@ export default {
         { tab: 'Borders'},
         { tab: 'Template CSS'}
       ],
+      icons: {
+        header: 'mdi-page-layout-header',
+        mm: 'mdi-page-layout-body',
+        services: 'mdi-view-grid-outline',
+        footer: 'mdi-page-layout-footer'
+    },
       snackbar: false,
       text: 'HTML Copied',
       timeout: 2000,
@@ -318,7 +355,7 @@ export default {
 .v-main__wrap {
   background-image: url(~assets/img/treehouse-logo-white.svg);
   background-position: center;
-  background-size: 40%;
+  background-size: 35%;
 }
 .snack-text {
   text-align: center;
