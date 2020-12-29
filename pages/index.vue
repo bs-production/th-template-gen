@@ -73,16 +73,17 @@
   <v-row justify="center" align="center">
     <v-col class="mb-5 output-box" cols="12" sm="8" md="12">
         <div v-if="headerSelected == 'A'">
-          <classic-header/>
+          <span v-html="classicHeaderHTML"></span>
+          <!-- <classic-header/> -->
         </div>
         <div v-if="headerSelected == 'B'">
           <condensed-header/>
         </div>
         <div v-if="mainMessageSelected == 'A'">
-          <classic-main-message/>
+          <span v-html="classicMainMessageHTML"></span>
         </div>
         <div v-if="servicesSelected == 'A'">
-          <classic-services/>
+          <span v-html="classicServicesHTML"></span>
         </div>
         <h2>[content]</h2>
         <div v-if="footerSelected == 'A'">
@@ -134,6 +135,7 @@
                     </div>
                     <div v-if="mainMessageSelected == 'A'">
                         {{classicMainMessageHTML}}
+                        <script>var slider=tns({container:'#main-message',items:1,mouseDrag:true,controlsText:['',''],autoplay:false,autoplayHoverPause:true,autoplayButtonOutput:false});</script>
                     </div>
                     <div v-if="servicesSelected == 'A'">
                         {{classicServicesHTML}}
@@ -195,7 +197,6 @@
   </div>
   </div>
 </template>
-
 <script>
 import { mapState } from "vuex";
 import TreehouseLogoWhite from '~/components/logos/TreehouseLogo.vue'
@@ -257,7 +258,7 @@ export default {
     ...mapState(["footers", "headers", "templatebody", "mainmessages","services"])
   },
   created() {
-    this.topHTML = formatter.render(this.templatebody[2].html);
+    this.topHTML = formatter.render(this.templatebody[0].html);
     this.bottomHTML = formatter.render(this.templatebody[1].html);
     this.classicHeaderHTML = formatter.render(this.headers[0].html);
     this.classicMainMessageHTML = formatter.render(this.mainmessages[0].html);
@@ -269,6 +270,9 @@ export default {
     this.classicMainMessageCSS = cssbeautify(this.mainmessages[0].css);
     this.classicServicesCSS = cssbeautify(this.services[0].css);
     this.classicFooterCSS = cssbeautify(this.footers[0].css);
+  },
+  mounted() {
+
   }, 
   methods: {
     copyHTML: function () {
@@ -300,7 +304,6 @@ export default {
   }
 };
 </script>
-
 <style>
 .theme--dark.v-application {
     background: #473f3d;

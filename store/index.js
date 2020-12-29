@@ -35,42 +35,42 @@ export const actions = {
     let response = await this.app.apolloProvider.defaultClient.query({
       query: gql`
       query {
-        templatebody {
-          name
-          html
-          css
-          id
-        }
-        headers {
-          id
-          name
-          css
-          html
-        }
-        mainmessages {
-          css
-          html
-          id
-          name
-        }
-        services {
-          css
-          html
-          id
-          name
-        }
-        footers {
+        templatebody(order_by: {id: asc}) {
           id
           name
           html
           css
         }
-        junkluggers {
-          css
-          html
+        headers(order_by: {id: asc}) {
           id
+          name
+          html
+          css
+        }
+        mainmessages(order_by: {id: asc}) {
+          id
+          name
+          html
+          css
+        }
+        services(order_by: {id: asc}) {
+          id
+          name
+          html
+          css
+        }
+        footers(order_by: {id: asc}) {
+          id
+          name
+          html
+          css
+        }
+        junkluggers(order_by: {id: asc}) {
+          id
+          name
+          html
+          css
           inline
-          name
         }
       }
       `

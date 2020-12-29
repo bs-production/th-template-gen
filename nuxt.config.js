@@ -13,11 +13,17 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' }
     ],
+    script: [
+      {
+        src: '/js/tiny-slider.min.js'
+      }
+    ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', type: 'text/css', href: '/css/headers/base.css' },
       { rel: 'stylesheet', type: 'text/css', href: '/css/headers/template.css' },
       { rel: 'stylesheet', type: 'text/css', href: '/css/headers/foundation.css' },
+      { rel: 'stylesheet', type: 'text/css', href: '/css/headers/plugins.css' },
     ]
   },
 

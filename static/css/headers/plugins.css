@@ -1,0 +1,515 @@
+/* Popbox - Modal Popup */
+.popbox.visible{
+	opacity:1;
+	z-index: 999;
+    transition:opacity 0.3s ease;
+}
+.popbox.opened{
+	display: block;
+}
+
+.popbox_locked #template-wrap.popbox_blur{
+	filter:blur(5px);
+}
+
+html.popbox_locked{
+    overflow: hidden;
+    -ms-touch-action: none;
+    touch-action: none;
+}
+
+.popbox{
+	z-index: -999;
+	position: fixed;
+	width: 100%;
+	max-width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+    will-change: opacity;
+    transition:opacity 0.3s ease;
+    opacity:0;
+    will-change: opacity;
+	background: rgba(51,51,51,0.5);
+	padding:20px;
+	padding-top:5%;
+	overflow-y: auto;
+	display: none;
+}
+
+.popbox_container {
+    position: relative;
+	margin: 0 auto 20px;
+	padding: 1rem;
+	background:#fff;
+	max-width:420px;
+}
+@media screen and (min-width:520px) {
+    .popbox_container{
+        padding: 2rem;
+    }
+    .popbox_container.large {
+        width:75%;
+        min-width:420px;
+        max-width:1100px;
+    }
+}
+
+/* Pushbar - Off-canvas Menu */
+.pushbar.opened{
+	display: block;
+}
+
+html.pushbar_locked{
+    overflow: hidden;
+    -ms-touch-action: none;
+    touch-action: none;
+}
+
+.pushbar_locked #template-wrap.pushbar_blur{
+	filter:blur(5px);
+}
+.pushbar{
+	z-index: 9000;
+	position: fixed;
+	will-change: transform;
+	overflow-y: auto;
+	transition:transform 0.5s ease;
+	background:#fff;
+}
+.pushbar_overlay{
+	z-index: -999;
+	position: fixed;
+	width: 100%;
+	max-width: 100%;
+	height: 100%;
+	min-height: 100vh;
+	top: 0;
+	left: 0;
+    will-change: opacity;
+    transition:opacity 0.5s ease;
+    opacity:0;
+	background: #fff;
+}
+html.pushbar_locked .pushbar_overlay{
+	opacity:0.7;
+	z-index: 999;
+    transition:opacity 0.5s ease;
+}
+
+.pushbar.from_left{
+	top: 0;
+	left: 0;
+	width: 100%;
+	max-width: 100%;
+	height: 100%;
+	min-height: 100vh;
+	transform: translateZ(0) translateX(-100%);
+}
+
+.pushbar.from_right{
+	top: 0;
+	right: 0;
+	width: 100%;
+	max-width: 100%;
+	height: 100%;
+	min-height: 100vh;
+	transform: translateZ(0) translateX(100%);
+}
+
+.pushbar.from_top{
+	top: 0;
+	left: 0;
+	width: 100%;
+	max-width: 100%;
+	min-height: 150px;
+	transform: translateZ(0) translateY(-100%);
+}
+.pushbar.from_bottom{
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	max-width: 100%;
+	min-height: 150px;
+	transform: translateZ(0) translateY(100%);
+}
+
+.pushbar.opened{
+	transform: translateX(0px) translateY(0px);
+}
+
+/* Tiny Slider */
+.tns-outer {
+    padding: 0 !important;
+    position: relative;
+}
+.tns-outer [hidden] {
+    display: none !important
+}
+.tns-outer [aria-controls],
+.tns-outer [data-action] {
+    cursor: pointer;
+}
+.tns-outer [aria-controls]:focus {
+    outline: none;
+}
+.tns-slider {
+    -webkit-transition: all 0s;
+    -moz-transition: all 0s;
+    transition: all 0s
+}
+.tns-slider>.tns-item {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+.tns-horizontal.tns-subpixel {
+    white-space: nowrap
+}
+.tns-horizontal.tns-subpixel>.tns-item {
+    display: inline-block;
+    vertical-align: top;
+    white-space: normal
+}
+.tns-horizontal.tns-no-subpixel:after {
+    content: '';
+    display: table;
+    clear: both
+}
+.tns-horizontal.tns-no-subpixel>.tns-item {
+    float: left
+}
+.tns-horizontal.tns-carousel.tns-no-subpixel>.tns-item {
+    margin-right: -100%
+}
+.tns-no-calc {
+    position: relative;
+    left: 0
+}
+.tns-gallery {
+    position: relative;
+    left: 0;
+    min-height: 1px
+}
+.tns-gallery>.tns-item {
+    position: absolute;
+    left: -100%;
+    -webkit-transition: transform 0s, opacity 0s;
+    -moz-transition: transform 0s, opacity 0s;
+    transition: transform 0s, opacity 0s
+}
+.tns-gallery>.tns-slide-active {
+    position: relative;
+    left: auto !important
+}
+.tns-gallery>.tns-moving {
+    -webkit-transition: all 0.25s;
+    -moz-transition: all 0.25s;
+    transition: all 0.25s
+}
+.tns-autowidth {
+    display: inline-block
+}
+.tns-lazy-img {
+    -webkit-transition: opacity 0.6s;
+    -moz-transition: opacity 0.6s;
+    transition: opacity 0.6s;
+    opacity: 0.6
+}
+.tns-lazy-img.tns-complete {
+    opacity: 1
+}
+.tns-ah {
+    -webkit-transition: height 0s;
+    -moz-transition: height 0s;
+    transition: height 0s
+}
+.tns-ovh {
+    overflow: hidden
+}
+.tns-visually-hidden {
+    position: absolute;
+    left: -10000em
+}
+.tns-transparent {
+    opacity: 0;
+    visibility: hidden
+}
+.tns-fadeIn {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    z-index: 0
+}
+.tns-normal,
+.tns-fadeOut {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    z-index: -1
+}
+.tns-vpfix {
+    white-space: nowrap
+}
+.tns-vpfix>div,
+.tns-vpfix>li {
+    display: inline-block
+}
+.tns-t-subp2 {
+    margin: 0 auto;
+    width: 310px;
+    position: relative;
+    height: 10px;
+    overflow: hidden
+}
+.tns-t-ct {
+    width: 2333.3333333%;
+    width: -webkit-calc(100% * 70 / 3);
+    width: -moz-calc(100% * 70 / 3);
+    width: calc(100% * 70 / 3);
+    position: absolute;
+    right: 0
+}
+.tns-t-ct:after {
+    content: '';
+    display: table;
+    clear: both
+}
+.tns-t-ct>div {
+    width: 1.4285714%;
+    width: -webkit-calc(100% / 70);
+    width: -moz-calc(100% / 70);
+    width: calc(100% / 70);
+    height: 10px;
+    float: left
+}
+/* Sliders */
+.tns-nav {
+    text-align:center;
+}
+.tns-nav button {
+    width:15px;
+    height:15px;
+    display:inline-block;
+    margin:0.5rem;
+    border-radius:50%;
+    background-color:rgba(255,
+    255,
+    255,
+    0.5);
+    transition:all 0.25s;
+}
+.tns-nav button.tns-nav-active {
+    background-color:var(--secondary-color);
+}
+.tns-controls button {
+    position:absolute;
+    top:0;
+    width:30px;
+    height:85%;
+    overflow:hidden;
+    opacity:0.6;
+    z-index:9;
+    transition:opacity 0.25s;
+    font-family:var(--base-font);
+}
+.tns-controls:focus,
+.tns-controls button:focus {
+    outline:none;
+}
+.tns-controls button:hover {
+    opacity:0.9;
+}
+.tns-controls button[data-controls="next"] {
+    right:0;
+    transform:rotate(180deg);
+}
+.tns-controls button::before {
+    display:block;
+    content:'❮';
+    width:30px;
+    height:40px;
+    line-height:40px;
+    font-size:40px;
+    color:var(--primary-color);
+    text-align:center;
+}
+
+@media screen and (max-width:1339px) {
+    .tns-outer .grid-container {
+        padding-left:70px;
+        padding-right:70px;
+    }
+}
+/* Main Message Slider */
+#main-message-ow .tns-nav {
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    z-index:10;
+    padding:1rem 0;
+}
+#main-message-ow .tns-nav button {
+    width:20px;
+    height:20px;
+    background-color:rgba(25,
+    48,
+    62,
+    0.75);
+    box-shadow:0 2px 8px rgba(25,
+    48,
+    62,
+    0.75);
+    position:relative;
+    transition:background-color 0.25s;
+}
+#main-message-ow .tns-nav button.tns-nav-active {
+    background-color:var(--secondary-color);
+}
+#main-message-ow .tns-nav button::before {
+    content:'';
+    position:absolute;
+    width:18px;
+    height:18px;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,
+     -50%);
+    background-color:#fff;
+    opacity:0.3;
+    border-radius:50%;
+    z-index:-1;
+    transition:all 0.5s cubic-bezier(.6,
+     2,
+     .6,
+     1);
+}
+#main-message-ow .tns-nav button.tns-nav-active::before {
+    width:26px;
+    height:26px;
+}
+/* Slider Arrows */
+#main-message-ow .tns-controls button {
+    width:50px;
+    height:100%;
+}
+#main-message-ow .tns-controls button:hover {
+    background-image:-webkit-linear-gradient(left,
+     rgba(0,
+    0,
+    0,
+    0.2),
+     transparent);
+    background-image:linear-gradient(to right,
+     rgba(0,
+    0,
+    0,
+    0.2),
+     transparent);
+}
+#main-message-ow .tns-controls button::before {
+    width:50px;
+    height:50px;
+    line-height:50px;
+    font-size:35px;
+    color:var(--secondary-color);
+    background-color:var(--primary-color);
+    border-radius:0 50px 50px 0;
+}
+/* GlideJS Slider Core */
+.glide {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box; }
+    .glide * {
+      box-sizing: inherit; }
+    .glide__track {
+      overflow: hidden; }
+    .glide__slides {
+      position: relative;
+      width: 100%;
+      list-style: none;
+      backface-visibility: hidden;
+      transform-style: preserve-3d;
+      touch-action: pan-Y;
+      padding: 0;
+      margin: 0;
+      white-space: nowrap;
+      display: flex;
+      flex-wrap: nowrap;
+      will-change: transform; }
+      .glide__slides--dragging {
+        user-select: none; }
+    .glide__slide {
+      width: 100%;
+      height: 100%;
+      flex-shrink: 0;
+      white-space: normal;
+      user-select: none;
+      -webkit-touch-callout: none;
+      -webkit-tap-highlight-color: transparent; }
+      .glide__slide a {
+        user-select: none;
+        -webkit-user-drag: none;
+        -moz-user-select: none;
+        -ms-user-select: none; }
+    .glide__arrows {
+      -webkit-touch-callout: none;
+      user-select: none; }
+    .glide__bullets {
+      -webkit-touch-callout: none;
+      user-select: none; }
+    .glide--rtl {
+      direction: rtl; }
+
+/* GlideJS base theme */
+.glide__arrow {
+    position: absolute;
+    display: block;
+    top: 50%;
+    z-index: 2;
+    cursor: pointer;
+    transform: translateY(-50%);
+    line-height: 1; }
+    .glide__arrow:focus {
+      outline: none; }
+    .glide__arrow--left {
+      left: 0;
+    }
+    .glide__arrow--right {
+      right: 0;
+    }
+    .glide__arrow--disabled {
+      opacity: 0.33; }
+
+.glide__bullets {
+    display: flex;
+    list-style: none;
+}
+  .glide__bullet {
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 9px;
+    height: 9px;
+    padding: 0;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    transition: all 300ms ease-in-out;
+    cursor: pointer;
+    line-height: 0;
+    margin: 0 0.25em; }
+    .glide__bullet:focus {
+      outline: none; }
+    .glide__bullet:hover, .glide__bullet:focus {
+      border: 2px solid white;
+      background-color: rgba(255, 255, 255, 0.5); }
+    .glide__bullet--active {
+      background-color: white; }
+
+  .glide--swipeable {
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab; }
+
+  .glide--dragging {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing; }
