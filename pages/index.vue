@@ -80,7 +80,7 @@
         </div>
         <div v-if="mainMessageSelected == 'A'">
           <span v-html="classicMainMessageHTML"></span>
-          <script v-html="classicMainMessageJS"></script>
+          <script v-html="slick"></script>
         </div>
         <div v-if="servicesSelected == 'A'">
           <span v-html="classicServicesHTML"></span>
@@ -225,7 +225,7 @@ export default {
       classicMainMessageCSS: '',
       classicServicesCSS: '',
       classicFooterCSS: '',
-      slick: null,
+      slick: "var slider=tns({container:'#main-message',items:1,mouseDrag:true,controlsText:['',''],autoplay:false,autoplayHoverPause:true,autoplayButtonOutput:false});",
       dropDownHeaders: [{ text: 'Classic', value: 'A' }, { text: 'Condensed', value: 'B' },{ text: 'Narrow', value: 'C' }, { text: 'Slim', value: 'D' }],
       dropDownMainMessages: [{ text: 'Classic', value: 'A' }, { text: 'Condensed', value: 'B' },{ text: 'Narrow', value: 'C' }, { text: 'Slim', value: 'D' }],
       dropDownServices: [{ text: 'Classic', value: 'A' }, { text: 'Condensed', value: 'B' },{ text: 'Narrow', value: 'C' }, { text: 'Slim', value: 'D' }],
@@ -263,7 +263,6 @@ export default {
     this.bottomHTML = formatter.render(this.templatebody[1].html);
     this.classicHeaderHTML = formatter.render(this.headers[0].html);
     this.classicMainMessageHTML = formatter.render(this.mainmessages[0].html);
-    this.classicMainMessageJS = this.mainmessages[0].js;
     this.classicServicesHTML = formatter.render(this.services[0].html);
     this.classicFooterHTML = formatter.render(this.footers[0].html);
 

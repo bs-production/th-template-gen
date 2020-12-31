@@ -52,7 +52,6 @@ export const actions = {
           name
           html
           css
-          js
         }
         services(order_by: {id: asc}) {
           id
