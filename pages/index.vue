@@ -80,7 +80,7 @@
         </div>
         <div v-if="mainMessageSelected == 'A'">
           <span v-html="classicMainMessageHTML"></span>
-          <script v-html="slick"></script>
+        <v-btn v-on:click="tinySlider">Greet</v-btn>
         </div>
         <div v-if="servicesSelected == 'A'">
           <span v-html="classicServicesHTML"></span>
@@ -301,6 +301,13 @@ export default {
         console.log(e)
       })
       this.snackbarCSS = true;
+    },
+    tinySlider: function () {
+      var tinyScript = document.createElement('script');
+      tinyScript.setAttribute('id', 'main-message');
+      var inlineCode = document.createTextNode("var slider=tns({container:'#main-message',items:1,mouseDrag:true,controlsText:['',''],autoplay:false,autoplayHoverPause:true,autoplayButtonOutput:false});");
+      tinyScript.appendChild(inlineCode); 
+      document.body.appendChild(tinyScript);
     }
   }
 };
