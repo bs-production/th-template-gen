@@ -168,7 +168,7 @@
 /* ============================== Main Message ============================== */
 #main-message {
     height:500px;
-    background-image: url('../img/mm-1.jpg');
+    background-image: url('');
     background-size: cover;
     position: relative;
 }

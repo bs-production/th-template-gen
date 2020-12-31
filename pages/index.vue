@@ -80,7 +80,8 @@
           <condensed-header/>
         </div>
         <div v-if="mainMessageSelected == 'A'">
-          <span v-html="classicMainMessageHTML"></span>
+          <!-- <span v-html="classicMainMessageHTML"></span> -->
+          <classic-main-message/>
         </div>
         <div v-if="servicesSelected == 'A'">
           <span v-html="classicServicesHTML"></span>
@@ -135,7 +136,6 @@
                     </div>
                     <div v-if="mainMessageSelected == 'A'">
                         {{classicMainMessageHTML}}
-                        <script>var slider=tns({container:'#main-message',items:1,mouseDrag:true,controlsText:['',''],autoplay:false,autoplayHoverPause:true,autoplayButtonOutput:false});</script>
                     </div>
                     <div v-if="servicesSelected == 'A'">
                         {{classicServicesHTML}}
@@ -225,6 +225,7 @@ export default {
       classicMainMessageCSS: '',
       classicServicesCSS: '',
       classicFooterCSS: '',
+      slick: null,
       dropDownHeaders: [{ text: 'Classic', value: 'A' }, { text: 'Condensed', value: 'B' },{ text: 'Narrow', value: 'C' }, { text: 'Slim', value: 'D' }],
       dropDownMainMessages: [{ text: 'Classic', value: 'A' }, { text: 'Condensed', value: 'B' },{ text: 'Narrow', value: 'C' }, { text: 'Slim', value: 'D' }],
       dropDownServices: [{ text: 'Classic', value: 'A' }, { text: 'Condensed', value: 'B' },{ text: 'Narrow', value: 'C' }, { text: 'Slim', value: 'D' }],
@@ -300,7 +301,7 @@ export default {
         console.log(e)
       })
       this.snackbarCSS = true;
-    },
+    }
   }
 };
 </script>

@@ -1,36 +1,40 @@
 <template>
+<div>
   <div id="main-message">
-                <div class="slide" style="background-image: url('https://cdn.treehouseinternetgroup.com/cms_images/727/sass-slide-1.jpg');">
-                    <div class="grid-container">
-                        <div class="main-text">
-                          <p class="main-subtitle">WE ARE YOUR LOCAL EXPERT FOR</p>
-                          <p class="main-title">Basement Waterproofing</p>
-                          <a class="button large hvr-float" href="#">Schedule a Free Estimate</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="slide" style="background-image: url('https://cdn.treehouseinternetgroup.com/cms_images/727/sass-slide-1.jpg');">
-                  <div class="grid-container">
-                      <div class="main-text">
-                        <p class="main-subtitle">WE ARE YOUR LOCAL EXPERT FOR</p>
-                        <p class="main-title">Basement Waterproofing</p>
-                        <a class="button large hvr-float" href="#">Schedule a Free Estimate</a>
-                      </div>
-                  </div>
-              </div>
-              <div class="slide" style="background-image: url('https://cdn.treehouseinternetgroup.com/cms_images/727/sass-slide-1.jpg');">
-                <div class="grid-container">
-                    <div class="main-text">
-                      <p class="main-subtitle">WE ARE YOUR LOCAL EXPERT FOR</p>
-                      <p class="main-title">Basement Waterproofing</p>
-                      <a class="button large hvr-float" href="#">Schedule a Free Estimate</a>
-                    </div>
+        <div class="slide" style="background-image: url('https://cdn.treehouseinternetgroup.com/cms_images/727/sass-slide-1.jpg');">
+            <div class="grid-container">
+                <div class="main-text">
+                    <p class="main-subtitle">WE ARE YOUR LOCAL EXPERT FOR</p>
+                    <p class="main-title">Basement Waterproofing</p>
+                    <a class="button large hvr-float" href="#">Schedule a Free Estimate</a>
                 </div>
             </div>
+        </div>
+        <div class="slide" style="background-image: url('https://cdn.treehouseinternetgroup.com/cms_images/727/sass-slide-1.jpg');">
+            <div class="grid-container">
+                <div class="main-text">
+                <p class="main-subtitle">WE ARE YOUR LOCAL EXPERT FOR</p>
+                <p class="main-title">Basement Waterproofing</p>
+                <a class="button large hvr-float" href="#">Schedule a Free Estimate</a>
+                </div>
             </div>
+        </div>
+        <div class="slide" style="background-image: url('https://cdn.treehouseinternetgroup.com/cms_images/727/sass-slide-1.jpg');">
+        <div class="grid-container">
+            <div class="main-text">
+                <p class="main-subtitle">WE ARE YOUR LOCAL EXPERT FOR</p>
+                <p class="main-title">Basement Waterproofing</p>
+                <a class="button large hvr-float" href="#">Schedule a Free Estimate</a>
+            </div>
+        </div>
+        </div>
+    </div>
+            <script>var slider=tns({container:'#main-message',items:1,mouseDrag:true,controlsText:['',''],autoplay:false,autoplayHoverPause:true,autoplayButtonOutput:false});</script>
+</div>
 </template>
 
 <script>
+
 export default {
 
 }
