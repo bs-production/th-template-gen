@@ -80,7 +80,7 @@
         </div>
         <div v-if="mainMessageSelected == 'A'">
           <span v-html="classicMainMessageHTML"></span>
-        <v-btn v-on:click="tinySlider">Greet</v-btn>
+        <div id="tiny">{{tinySlider}}</div>
         </div>
         <div v-if="servicesSelected == 'A'">
           <span v-html="classicServicesHTML"></span>
@@ -225,7 +225,7 @@ export default {
       classicMainMessageCSS: '',
       classicServicesCSS: '',
       classicFooterCSS: '',
-      slick: "var slider=tns({container:'#main-message',items:1,mouseDrag:true,controlsText:['',''],autoplay:false,autoplayHoverPause:true,autoplayButtonOutput:false});",
+      tinyScript: "let slider=tns({container:'#main-message',items:1,mouseDrag:true,controlsText:['',''],autoplay:false,autoplayHoverPause:true,autoplayButtonOutput:false});",
       dropDownHeaders: [{ text: 'Classic', value: 'A' }, { text: 'Condensed', value: 'B' },{ text: 'Narrow', value: 'C' }, { text: 'Slim', value: 'D' }],
       dropDownMainMessages: [{ text: 'Classic', value: 'A' }, { text: 'Condensed', value: 'B' },{ text: 'Narrow', value: 'C' }, { text: 'Slim', value: 'D' }],
       dropDownServices: [{ text: 'Classic', value: 'A' }, { text: 'Condensed', value: 'B' },{ text: 'Narrow', value: 'C' }, { text: 'Slim', value: 'D' }],
@@ -256,7 +256,19 @@ export default {
       ClassicFooter
     },
   computed: {
-    ...mapState(["footers", "headers", "templatebody", "mainmessages","services"])
+    ...mapState(["footers", "headers", "templatebody", "mainmessages","services"]),
+    tinySlider: function () {
+      let v = this.tinyScript;
+      
+      setTimeout(function () {
+        let mmId = document.getElementById('tiny');
+        let script = document.createElement("script");
+        let inlineCode = document.createTextNode(v);
+        script.appendChild(inlineCode);
+        console.log(script);
+        mmId.appendChild(script); 
+      }, 1000);
+    }
   },
   created() {
     this.topHTML = formatter.render(this.templatebody[0].html);
@@ -294,20 +306,12 @@ export default {
     },
     copyCSS: function () {
       this.$copyText(document.querySelector('#css').innerHTML).then(function (e) {
-  
         console.log(e)
       }, function (e) {
         alert('Can not copy')
         console.log(e)
       })
       this.snackbarCSS = true;
-    },
-    tinySlider: function () {
-      var tinyScript = document.createElement('script');
-      tinyScript.setAttribute('id', 'main-message');
-      var inlineCode = document.createTextNode("var slider=tns({container:'#main-message',items:1,mouseDrag:true,controlsText:['',''],autoplay:false,autoplayHoverPause:true,autoplayButtonOutput:false});");
-      tinyScript.appendChild(inlineCode); 
-      document.body.appendChild(tinyScript);
     }
   }
 };
