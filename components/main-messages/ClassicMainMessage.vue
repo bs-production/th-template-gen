@@ -29,7 +29,6 @@
         </div>
         </div>
     </div>
-            <script>var slider=tns({container:'#main-message',items:1,mouseDrag:true,controlsText:['',''],autoplay:false,autoplayHoverPause:true,autoplayButtonOutput:false});</script>
 </div>
 </template>
 

@@ -74,14 +74,13 @@
     <v-col class="mb-5 output-box" cols="12" sm="8" md="12">
         <div v-if="headerSelected == 'A'">
           <span v-html="classicHeaderHTML"></span>
-          <!-- <classic-header/> -->
         </div>
         <div v-if="headerSelected == 'B'">
           <condensed-header/>
         </div>
         <div v-if="mainMessageSelected == 'A'">
-          <!-- <span v-html="classicMainMessageHTML"></span> -->
-          <classic-main-message/>
+          <span v-html="classicMainMessageHTML"></span>
+          <script v-html="classicMainMessageJS"></script>
         </div>
         <div v-if="servicesSelected == 'A'">
           <span v-html="classicServicesHTML"></span>
@@ -217,6 +216,7 @@ export default {
       topHTML: '',
       classicHeaderHTML: '',
       classicMainMessageHTML: '',
+      classicMainMessageJS: '',
       classicServicesHTML: '',
       classicFooterHTML: '',
       bottomHTML: '',
@@ -263,6 +263,7 @@ export default {
     this.bottomHTML = formatter.render(this.templatebody[1].html);
     this.classicHeaderHTML = formatter.render(this.headers[0].html);
     this.classicMainMessageHTML = formatter.render(this.mainmessages[0].html);
+    this.classicMainMessageJS = this.mainmessages[0].js;
     this.classicServicesHTML = formatter.render(this.services[0].html);
     this.classicFooterHTML = formatter.render(this.footers[0].html);
 
