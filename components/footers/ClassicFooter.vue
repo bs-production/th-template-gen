@@ -106,11 +106,11 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 :root {
     /* Site colors */
-    --primary-color:#19303e;
-    --secondary-color:#399bb6;
+    --primary-color:#000;
+    --secondary-color:#494949;
     --tertiary-color:#e0f7ff;
 }
 /* ============================== Footer ============================== */

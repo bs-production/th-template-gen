@@ -1,7 +1,12 @@
-/* ============================== COMPONENT STYLES ============================== */
-.has-dropdown {
-    position: relative;
+/* ============================== BASE LAYOUT ============================== */
+.grid-container::after {
+    content: '';
+    clear: both;
+    display: block;
 }
+/* --------------- COMPONENTS --------------- */
+
+/* SuperToggle component styles*/
 .super-toggle {
     display: block;
     padding: 10px;
@@ -17,6 +22,7 @@
 .tabs, .acc {
     margin: 2rem auto;
 }
+
 /* Arrange tab buttons in a row */
 .tab-nav {
     display: -webkit-box;
@@ -26,39 +32,94 @@
     -webkit-box-direction: normal;
     -ms-flex-flow: row wrap;
     flex-flow: row wrap;
+    /* horizontal alignment */
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     justify-content: flex-start;
+    /* vertical alignment */
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
 }
-/* ============================== GENERAL ============================== */
+/* Modals */
+button.close-modal {
+    font: 700 25px/22px sans-serif;
+    height: 26px;
+    width: 26px;
+    text-align: center;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+button.close-modal span {
+    display: block;
+    height: 100%;
+}
+/* Background images as img tags */
+.bg-img {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+.bg-img img {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+}
+/* ----- GENERAL ----- */
 #template-wrap {
     -webkit-transition: -webkit-transform 0.5s ease;
     transition: -webkit-transform 0.5s ease;
     transition: transform 0.5s ease;
+    overflow-x: hidden;
 }
-/* ============================== HEADER ============================== */
+/* ----- HEADER ----- */
 #header {
-    top: 0;
-    left: 0;
+    position: relative;
     z-index: 999;
     width: 100%;
     -webkit-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
     box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
-
 #header.fixed-head {
     position: fixed;
+    top: 0;
+    left: 0;
     -webkit-animation: slideDown 0.3s ease-out;
     animation: slideDown 0.3s ease-out;
+}
+#phone-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+@media screen and (min-width:520px) {
+    #phone-wrap {
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+    }
 }
 
 /* ============================== NAVIGATION ============================== */
 
-/* === Mobile Menu Layout === */
+/* --- Off-canvas Mobile Menu Layout --- */
 .oc-item.has-dropdown {
     position: relative;
 }
@@ -82,10 +143,10 @@
 .oc-item > a {
     padding: 10px 20px;
     font-weight: bold;
+    text-transform: uppercase;
 }
 
 .oc-item.quote {
-    border-bottom: none;
     margin: 20px 10px 10px;
 }
 .oc-item.quote a {
@@ -132,6 +193,7 @@
 .menu-icon {
     display: inline-block;
     padding: 6px;
+    margin-left: 1rem;
 }
 .menu-icon span {
     height: 2px;
@@ -140,48 +202,111 @@
     display: block;
 }
 /* Menu Bar Element */
+#nav-bar {
+    position: relative;
+}
 #nav-menu {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 /* Individual Nav Items */
-#nav-menu .nav-item > a {
+.nav-item {
+    position: relative;
+}
+.nav-item a {
     display: block;
+}
+.nav-item > a {
     padding: 1rem;
     line-height: 1.25rem;
+    text-transform: uppercase;
 }
-/* Dropdown */
-#nav-menu .nav-item > ul {
+/* Dropdown Layout */
+.nav-item ul {
     margin: 0;
     list-style: none;
+}
+.nav-item > .dropdown {
+    display: block;
     position: absolute;
     top: 100%;
     left:0;
     min-width: 300px;
+    visibility: hidden;
+    text-align: left;/* Needed as header is set to align right */
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: all 0.25s ease-out;
 }
-#nav-menu .nav-item > ul a {
-    display: block;
+.nav-item.active > .dropdown {
+    visibility: visible;
+    transform: none;
+    opacity: 1;
+}
+/* First level dropdown links */
+.nav-item .dropdown > li > a {
     padding: 10px;
 }
-/* ============================== Main Message ============================== */
-#main-message {
-    height:500px;
-    background-image: url('');
-    background-size: cover;
+/* Second level dropdown links */
+.nav-item .submenu {
+    margin-left: 10px;
+    display: none;/* Hide submenus unless in mega nav */
+}
+.nav-item .submenu a {
+    padding: 2px 2px 2px 1rem;
+}
+.nav-item .submenu li {
     position: relative;
 }
-#main-message::before {
+.nav-item .submenu li::before {
     content: '';
     display: block;
     position: absolute;
-    top: 0;
+    top: 9px;
     left: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 0.6;
+    width: 7px;
+    height: 7px;
+    border-style: solid;
+    border-width: 3px 3px 0 0;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
+/* Mega Nav Styles */
+.nav-item.mega {
+    position: static;
+}
+.nav-item.mega .dropdown {
+    padding: 1rem 0;
+    width: 100%;
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+}
+.nav-item.mega .dropdown li {
+    -webkit-column-break-inside: avoid;
+    column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+.nav-item.mega .submenu {
+    display: block;
+}
+
+
+/* ============================== Main Message ============================== */
+
 #main-message .grid-container {
     position: relative;
     height: 100%;

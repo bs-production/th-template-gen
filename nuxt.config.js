@@ -15,7 +15,7 @@ export default {
     ],
     script: [
       {
-        src: '/js/tiny-slider.min.js'
+        // src: '/js/plugins.js'
       }
     ],
     link: [

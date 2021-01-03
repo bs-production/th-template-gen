@@ -79,8 +79,8 @@ export default {
 <style>
 :root {
     /* Site colors */
-    --primary-color:#19303e;
-    --secondary-color:#399bb6;
+    --primary-color:#000;
+    --secondary-color:#494949;
     --tertiary-color:#e0f7ff;
     --quaternary-color:#f9f9f9;
     /* Section backgrounds */

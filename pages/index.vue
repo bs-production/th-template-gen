@@ -73,10 +73,16 @@
   <v-row justify="center" align="center">
     <v-col class="mb-5 output-box" cols="12" sm="8" md="12">
         <div v-if="headerSelected == 'A'">
-          <span v-html="classicHeaderHTML"></span>
+          <classic-header/>
         </div>
         <div v-if="headerSelected == 'B'">
           <condensed-header/>
+        </div>
+        <div v-if="headerSelected == 'C'">
+          <narrow-header/>
+        </div>
+        <div v-if="headerSelected == 'D'">
+          <slim-header/>
         </div>
         <div v-if="mainMessageSelected == 'A'">
           <span v-html="classicMainMessageHTML"></span>
@@ -267,7 +273,7 @@ export default {
         script.appendChild(inlineCode);
         console.log(script);
         mmId.appendChild(script); 
-      }, 1000);
+      }, 500);
     }
   },
   created() {
@@ -326,6 +332,9 @@ export default {
 .theme--dark.v-card {
     background-color: #1e1e1e;
     color: #FFFFFF;
+}
+.theme--dark.v-input {
+  z-index: 1000;
 }
 .v-application a {
     color: inherit;

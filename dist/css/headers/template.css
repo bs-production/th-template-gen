@@ -72,42 +72,7 @@
 #header-service-area p {
     margin-bottom: 0;
 }
-/* Contact Bar */
-#header-btn {
-    display: block;
-    text-align: right;
-    font-size: 1rem;
-    line-height: 1.25rem;
-}
-#header-btn a {
-    padding: 5px 10px;
-    text-align: center;
-    color: #fff;
-    max-width: 160px;
-    margin: 0;
-}
 
-#phone {
-    display: inline-block;
-    line-height: 1;
-    font-weight: bold;
-    padding: 10px 0;
-    text-align: center;
-    vertical-align: middle;
-}
-#phone-wrap .opensign {
-    display: inline-block;
-    background: #17417c;
-    border-radius: 3px;
-    padding: 7px;
-    vertical-align: middle;
-}
-#phone-wrap .opensign span {
-    font-family: inherit;
-    text-transform: uppercase;
-    display: block;
-    color: #fff;
-}
 
 /* ============================== NAVIGATION ============================== */
 
@@ -139,9 +104,6 @@
 }
 
 /* === Main Menu Styling === */
-#nav-bar {
-    background-color: #444;
-}
 .menu-icon {
     background-color: #17417c;
 }.menu-icon:hover {
@@ -150,23 +112,7 @@
 .menu-icon span {
     background-color: #fff;
 }
-/* Change color of bars on hover
-.menu-icon:hover span {
-    background-color: #eee;
-} */
 
-/* Top Level Menu Button Styles */
-.nav-item > a {
-    color:#fff;
-    background-color: transparent;
-    font-weight: bold;
-}
-.nav-item > a:hover {
-    background-color:#17417c;
-}
-.nav-item > a:hover {
-    background-color:#17417c;
-}
 /* Nav dropdown lists */
 .nav-item > ul {
     background-color: #444;

@@ -61,7 +61,7 @@ export default {
       items: [
         {
           icon: 'mdi-pine-tree',
-          title: 'Sassafras',
+          title: 'Custom Template',
           to: '/'
         },
         {
