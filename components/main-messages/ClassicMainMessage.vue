@@ -39,7 +39,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 :root {
     /* Site colors */
     --primary-color:#000;
