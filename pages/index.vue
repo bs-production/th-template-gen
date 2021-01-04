@@ -135,7 +135,7 @@
                 </div>
                <pre>
                   <code id="html">
-                    <!-- {{topHTML}} -->
+                    {{topHTML}}
                     <div v-if="headerSelected === 'A' || 'B' || 'C' || 'D'">
                         {{classicHeaderHTML}}
                     </div>
