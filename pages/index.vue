@@ -145,7 +145,7 @@
                     <div v-if="servicesSelected === 'A'">
                         {{classicServicesHTML}}
                     </div>
-                     [content]
+                     [[content]]
                     <div v-if="footerSelected === 'A'">
                       {{classicFooterHTML}}
                     </div>
