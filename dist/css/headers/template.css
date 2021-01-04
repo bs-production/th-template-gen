@@ -45,35 +45,6 @@
     background-color: #17417c;
 }
 
-/* ============================== HEADER ============================== */
-#header {
-    background-color: #333;
-    color: #fff;
-}
-#logo a {
-    display: block;
-    position: relative;
-    padding: 0;
-    margin: 0;
-}
-#logo svg, #logo img {
-    display: block;
-    width: auto;
-    height: 50px;
-}
-@media screen and (min-width:1025px) {
-    #logo svg, #logo img {
-        width: 100%;
-        height: auto;
-        max-width: 300px;
-    }
-}
-/* Header Service Area Bar */
-#header-service-area p {
-    margin-bottom: 0;
-}
-
-
 /* ============================== NAVIGATION ============================== */
 
 /* === Mobile Menu Styling === */

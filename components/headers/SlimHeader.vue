@@ -151,7 +151,7 @@ export default {
 #header {
   background-color: #fff;
   color: var(--secondary-color);
-  padding: 5px 0 20px 0;
+  padding: 10px 0 0px 0;
 }
 #phone-wrap .opensign {
   background: var(--secondary-color);

@@ -296,10 +296,6 @@ export default {
       "head-logo head-phone head-phone head-button"
       "head-nav head-nav head-nav head-nav";
   }
-  #header.fixed-head #logo svg {
-    height: 50px;
-    width: auto;
-  }
   #header.fixed-head #header-service-area {
     display: none;
   }

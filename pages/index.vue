@@ -327,7 +327,13 @@ export default {
       this.snackbar = true;
     },
     copyCSS: function () {
-      this.$copyText(document.querySelector('#css').innerHTML).then(function (e) {
+      var decodeCSS = function (css) {
+        var txt = document.createElement('textarea');
+        txt.innerHTML = css;
+        return txt.value;
+      };
+      let cssEscaped = document.querySelector('#css').innerHTML;
+      this.$copyText(decodeCSS((cssEscaped))).then(function (e) {
         console.log(e)
       }, function (e) {
         alert('Can not copy')
