@@ -135,18 +135,18 @@
                 </div>
                <pre>
                   <code id="html">
-                    {{topHTML}}
-                    <div v-if="headerSelected == 'A'">
+                    <!-- {{topHTML}} -->
+                    <div v-if="headerSelected === 'A' || 'B' || 'C' || 'D'">
                         {{classicHeaderHTML}}
                     </div>
-                    <div v-if="mainMessageSelected == 'A'">
+                    <div v-if="mainMessageSelected === 'A'">
                         {{classicMainMessageHTML}}
                     </div>
-                    <div v-if="servicesSelected == 'A'">
+                    <div v-if="servicesSelected === 'A'">
                         {{classicServicesHTML}}
                     </div>
                      [content]
-                    <div v-if="footerSelected == 'A'">
+                    <div v-if="footerSelected === 'A'">
                       {{classicFooterHTML}}
                     </div>
                     {{bottomHTML}}
@@ -181,6 +181,16 @@
                   <div v-if="headerSelected == 'A'">
                       {{classicHeaderCSS}}
                   </div>
+                  <div v-if="headerSelected == 'B'">
+                      {{condensedHeaderCSS}}
+                  </div>
+                  <div v-if="headerSelected == 'C'">
+                      {{narrowHeaderCSS}}
+                  </div>
+                  <div v-if="headerSelected == 'D'">
+                      {{slimHeaderCSS}}
+                  </div>
+
                   <div v-if="mainMessageSelected == 'A'">
                       {{classicMainMessageCSS}}
                   </div>
@@ -228,6 +238,9 @@ export default {
       bottomHTML: '',
       templateCSS: '',
       classicHeaderCSS: '',
+      condensedHeaderCSS: '',
+      narrowHeaderCSS: '',
+      slimHeaderCSS: '',
       classicMainMessageCSS: '',
       classicServicesCSS: '',
       classicFooterCSS: '',
@@ -286,6 +299,9 @@ export default {
 
     this.templateCSS = cssbeautify(this.templatebody[2].css);
     this.classicHeaderCSS = cssbeautify(this.headers[0].css);
+    this.condensedHeaderCSS = cssbeautify(this.headers[1].css);
+    this.narrowHeaderCSS = cssbeautify(this.headers[2].css);
+    this.slimHeaderCSS = cssbeautify(this.headers[3].css);
     this.classicMainMessageCSS = cssbeautify(this.mainmessages[0].css);
     this.classicServicesCSS = cssbeautify(this.services[0].css);
     this.classicFooterCSS = cssbeautify(this.footers[0].css);
@@ -328,13 +344,14 @@ export default {
 }
 .theme--dark.v-app-bar.v-toolbar.v-sheet {
     background-color: #73aa4a;
+    z-index: 1000;
 }
 .theme--dark.v-card {
     background-color: #1e1e1e;
     color: #FFFFFF;
 }
 .theme--dark.v-input {
-  z-index: 1000;
+  z-index: 100;
 }
 .v-application a {
     color: inherit;

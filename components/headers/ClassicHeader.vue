@@ -32,7 +32,12 @@
             <div id="phone">1-800-640-1500</div>
           </div>
           <div id="header-btn"><a class="button">Contact Us Online</a></div>
-          <div id="nav-bar">
+
+        </div>
+        
+        <!-- /#header-grid -->
+      </div>
+                <div id="nav-bar">
             <!-- SUPER NAV TOOL - Main Menu -->
             <nav id="nav-menu">
               <div class="nav-item has-dropdown mega">
@@ -126,9 +131,6 @@
             </nav>
             <!-- END SUPER NAV TOOL -->
           </div>
-        </div>
-        <!-- /#header-grid -->
-      </div>
     </header>
   </div>
 </template>
@@ -138,12 +140,12 @@
 export default {
     head() {
       return {
-        script: [
-          {
-            src:
-              '/js/plugins.js'
-          }
-        ]
+        // script: [
+        //   {
+        //     src:
+        //       '/js/plugins.js'
+        //   }
+        // ]
       }
     }
 };

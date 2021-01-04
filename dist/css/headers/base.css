@@ -81,7 +81,6 @@ button.close-modal span {
 /* ----- HEADER ----- */
 #header {
     position: relative;
-    z-index: 999;
     width: 100%;
     -webkit-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
